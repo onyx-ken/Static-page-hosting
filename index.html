@@ -13,32 +13,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.26.0/dist/full.css" rel="stylesheet" type="text/css" />
 
-    <!-- 기존 스크립트 및 스타일 -->
-    <script>
-        // 다크 모드 및 라이트 모드 전환 스크립트
-        function toggleTheme() {
-            const html = document.documentElement;
-            if (html.dataset.theme === "bumblebee") {
-                html.dataset.theme = "night";
-            } else {
-                html.dataset.theme = "bumblebee";
-            }
-        }
 
-        function toggleVerse(className) {
-            const elements = document.getElementsByClassName(className);
-            const button = event.currentTarget;
-            const isHidden = elements[0].classList.contains('fade-hidden');
-
-            // 버튼의 aria-expanded 속성 업데이트
-            button.setAttribute('aria-expanded', !isHidden);
-
-            for (const element of elements) {
-                element.classList.toggle('fade-hidden');
-                element.classList.toggle('mb-4'); // mb-4 토글
-            }
-        }
-    </script>
 
     <style>
         /* 한글 폰트 적용 */
@@ -232,6 +207,60 @@
         <p class="mb-4">하나님께서는 이미 성령님을 보내주셨다. 중요한 것은, 우리 안에 거하시는 성령님을 날마다 의식하며 그분의 음성에 귀 기울이고, 그분의 인도하심을 따라 성령 충만한 삶을 살아가는 것이다.</p>
         <p>성령 충만한 삶을 살겠다고 결심하는 그날이 성령 세례를 받은 날이다. 성령 세례는 한 번 받지만, 성령 충만은 매일 이루어져야 한다. 성령님께서 함께하심을 믿고 성령 충만하게 살 것인지, 불신하여 원망과 불평의 삶을 살 것인지는 나의 자유이며 그 결과의 책임도 나의 몫이다.</p>
     </div>
+    <button id="scroll-to-top"
+            class="fixed top-1/2 right-4 md:right-8 lg:right-16 transform -translate-y-1/2 z-50 bg-primary text-white p-3 rounded-full shadow-lg opacity-50 hover:opacity-100 transition-opacity duration-300 hidden"
+            onclick="scrollToTop()"
+            aria-label="맨 위로 이동">
+        <!-- 위쪽 화살표 아이콘 (SVG) -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
 </div>
+<script>
+    // 다크 모드 및 라이트 모드 전환 스크립트
+    function toggleTheme() {
+        const html = document.documentElement;
+        if (html.dataset.theme === "bumblebee") {
+            html.dataset.theme = "night";
+        } else {
+            html.dataset.theme = "bumblebee";
+        }
+    }
+
+    function toggleVerse(className) {
+        const elements = document.getElementsByClassName(className);
+        const button = event.currentTarget;
+        const isHidden = elements[0].classList.contains('fade-hidden');
+
+        // 버튼의 aria-expanded 속성 업데이트
+        button.setAttribute('aria-expanded', !isHidden);
+
+        for (const element of elements) {
+            element.classList.toggle('fade-hidden');
+            element.classList.toggle('mb-4'); // mb-4 토글
+        }
+    }
+    // "맨 위로 이동" 버튼 표시 여부를 결정하는 함수
+    window.addEventListener('scroll', function() {
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        const scrollPosition = window.scrollY || window.pageYOffset;
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+        if (scrollPosition > windowHeight / 2) {
+            scrollToTopBtn.classList.remove('hidden');
+        } else {
+            scrollToTopBtn.classList.add('hidden');
+        }
+    });
+
+    // 버튼 클릭 시 페이지 맨 위로 부드럽게 스크롤하는 함수
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
 </body>
 </html>
