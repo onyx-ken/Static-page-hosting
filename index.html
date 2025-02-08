@@ -6,23 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>성숙자반 - 복(福)</title>
 
-	<script>
-	(function() {
-		// 로컬 스토리지에 'firstVisitDone' 플래그가 없으면
-		if (!localStorage.getItem('firstVisitDone')) {
-			// 플래그를 설정 (첫 방문임을 기록)
-			localStorage.setItem('firstVisitDone', 'true');
-
-			// 현재 URL에 이미 noCache 파라미터가 없는 경우
-			if (!location.search.includes('noCache')) {
-				// 쿼리 스트링에 현재 시간 값을 추가하여 캐시 무효화 효과 부여
-				const separator = location.search ? '&' : '?';
-				location.replace(location.href + separator + 'noCache=' + new Date().getTime());
-			}
-		}
-	})();
-	</script>
-
 	<!-- Google Fonts - Noto Sans KR -->
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
@@ -205,7 +188,7 @@
 			아브라함은 하나님의 말씀을 삶으로 듣는 복된 귀를 지녔다. 복된 귀를 지녔다는 것은 하나님의 말씀을 삶으로 듣는 것이다.
 		</p>
 		<div id="imageContainer" class="overflow-hidden transition-all duration-300 max-h-0 opacity-0">
-			<img src="/pic1.png" alt="성 마태오를 부르심 - 카라바조 작" class="w-full mb-4">
+			<img src="./pic1.png" alt="성 마태오를 부르심 - 카라바조 작" class="w-full mb-4">
 		</div>
 		<button id="toggleImageBtn" class="btn btn-primary mb-4" onclick="toggleImage()">본문 참조 - <성 마태오를 부르심 : 카라바조></button>
 		<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
