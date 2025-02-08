@@ -1,290 +1,465 @@
 <!DOCTYPE html>
 <html lang="ko" data-theme="bumblebee">
 <head>
-    <!-- 기존 메타 태그 및 제목 -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>성령님은 누구인가?</title>
+	<!-- 메타 태그 및 제목 -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>성숙자반 - 복(福)</title>
 
-    <!-- Google Fonts에서 Noto Sans KR 추가 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+	<!-- Google Fonts - Noto Sans KR -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS 및 DaisyUI 추가 -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.26.0/dist/full.css" rel="stylesheet" type="text/css" />
+	<!-- Tailwind CSS 및 DaisyUI -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://cdn.jsdelivr.net/npm/daisyui@2.26.0/dist/full.css" rel="stylesheet" type="text/css" />
 
+	<style>
+      /* 한글 폰트 적용 */
+      body {
+          font-family: 'Noto Sans KR', sans-serif;
+      }
 
+      /* 블록 인용문 애니메이션 (필요 시 사용) */
+      .fade {
+          transition: opacity 1.5s ease, max-height 0.5s ease;
+          opacity: 1;
+          max-height: 1000px;
+          overflow: hidden;
+      }
 
-    <style>
-        /* 한글 폰트 적용 */
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-
-        /* 블록 인용문의 애니메이션 효과 */
-        .fade {
-            transition: opacity 1.5s ease, max-height 0.5s ease;
-            opacity: 1;
-            max-height: 1000px; /* 충분히 큰 값으로 설정 */
-            overflow: hidden;
-        }
-
-        .fade-hidden {
-            opacity: 0;
-            max-height: 0;
-            margin-bottom: 0 !important; /* 공백 제거 */
-            padding-bottom: 0 !important; /* 공백 제거 */
-        }
-    </style>
+      .fade-hidden {
+          opacity: 0;
+          max-height: 0;
+          margin-bottom: 0 !important;
+          padding-bottom: 0 !important;
+      }
+	</style>
 </head>
-<body class="font-sans text-base-content p-4">
-<div class="max-w-4xl mx-auto p-4">
-    <div class="flex justify-between items-center mb-6">
-        <h1 class="text-2xl md:text-3xl font-bold text-center">성령님은 누구인가?</h1>
-        <label class="swap swap-rotate">
-            <!-- this hidden checkbox controls the state -->
-            <input type="checkbox" onclick="toggleTheme()" />
-            <!-- sun icon -->
-            <svg
-                    class="swap-on h-10 w-10 fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24">
-                <path
-                        d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-            </svg>
-            <!-- moon icon -->
-            <svg
-                    class="swap-off h-10 w-10 fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24">
-                <path
-                        d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-            </svg>
-        </label>
-    </div>
 
-    <!-- 수정된 카드 -->
-    <div class="card shadow-md p-4">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4">예수님께서는 성령님이 오실 것을 약속하셨고, 그 약속대로 성령님께서 이 땅에 임하셨다.</h2>
-        <p class="mb-4">(요 14:16-17, 요 14:26, 요 15:26, 요 16:7, 행 1:5, 행 1:8, 행 2:1-4)</p>
-        <p class="mb-4">성경적 근거의 성령님
-            <button class="btn btn-xs sm:btn-sm btn-outline ml-2" onclick="toggleVerse('bible-verses')" aria-expanded="false">말씀 보기</button>
-        </p>
-        <blockquote class="border-l-4 border-primary pl-8 mb-4 italic bible-verses fade fade-hidden">
-            "내가 아버지께 구하겠으니 그가 또 다른 보혜사를 너희에게 주사 영원토록 너희와 함께 있게 하리니, 그는 진리의 영이라 세상은 능히 그를 받지 못하나니 이는 그를 보지도 못하고 알지도 못함이라 그러나 너희는 그를 아나니 그는 너희와 함께 거하심이요 또 너희 속에 계시겠음이라" (요 14:16-17)
-        </blockquote>
-        <blockquote class="border-l-4 border-primary pl-8 mb-4 italic bible-verses fade fade-hidden">
-            "보혜사 곧 아버지께서 내 이름으로 보내실 성령 그가 너희에게 모든 것을 가르치고 내가 너희에게 말한 모든 것을 생각나게 하리라" (요 14:26)
-        </blockquote>
-        <blockquote class="border-l-4 border-primary pl-8 mb-4 italic bible-verses fade fade-hidden">
-            "내가 아버지께로부터 너희에게 보낼 보혜사 곧 아버지께로부터 나오시는 진리의 성령이 오실 때에 그가 나를 증언하실 것이요" (요 15:26)
-        </blockquote>
-        <blockquote class="border-l-4 border-primary pl-8 mb-4 italic bible-verses fade fade-hidden">
-            "요한은 물로 세례를 베풀었으나 너희는 몇 날이 못되어 성령으로 세례를 받으리라 하셨느니라" (행 1:5)
-        </blockquote>
-        <blockquote class="border-l-4 border-primary pl-8 mb-4 italic bible-verses fade fade-hidden">
-            "오직 성령이 너희에게 임하시면 너희가 권능을 받고 예루살렘과 온 유대와 사마리아와 땅 끝까지 이르러 내 증인이 되리라 하시니라" (행 1:8)
-        </blockquote>
-        <br>
-        <blockquote class="border-l-4 border-primary pl-4 mb-4 italic">"땅이 혼돈하고 공허하며 흑암이 깊음 위에 있고 하나님의 영은 수면 위에 운행하시니라 (창 1:2)"</blockquote>
-        <p class="mb-4">태초에 하나님이 천지를 창조하셨을 때 ‘하나님의 영’, 즉 성령님께서도 함께하고 계셨다. 하나님은 자신을 가리켜 ‘우리’라고 칭하며 행위는 단수형으로 표현하였다. 이는 삼위일체를 나타낸다.</p>
-    </div>
+<body class="font-sans text-base-content bg-base-200 p-6">
+<div class="max-w-4xl mx-auto space-y-8">
+	<!-- 헤더: 제목과 다크모드 토글 -->
+	<div class="flex justify-between items-center bg-base-100 rounded-lg shadow-xl p-6">
+		<h1 class="text-3xl font-bold text-center">성숙자반 - 복(福)</h1>
+		<label class="swap swap-rotate">
+			<!-- 토글 컨트롤 -->
+			<input type="checkbox" onclick="toggleTheme()" />
+			<!-- sun icon -->
+			<svg class="swap-on h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+				<path
+					d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+			</svg>
+			<!-- moon icon -->
+			<svg class="swap-off h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+				<path
+					d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Z" />
+			</svg>
+		</label>
+	</div>
 
-    <div class="card shadow-md p-4">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4">삼위일체</h2>
-        <ul class="list-disc list-inside mb-4 space-y-2">
-            <blockquote class="border-l-4 border-primary pl-4 mb-4 italic">"예수께서 세례를 받으시고 물에서 올라오실 때, 하늘이 열리고 하나님의 성령이 비둘기같이 내려 임하심을 보셨으며, 하늘로부터 "이는 내 사랑하는 아들이요 내 기뻐하는 자라"는 소리가 들렸다 (마 3:16-17)"</blockquote>
-            <li>성자 예수 그리스도께서 이 땅에 계실 동안에도 성부와 성령은 각각 다른 사역을 동시에 행하셨다.</li>
-            <li>삼위일체의 하나님이 동시에 역사하심.</li>
-            <li>성부 하나님의 창조, 성자 하나님의 구원, 성령 하나님의 인도하심은 언제나 완벽한 일치와 조화를 이룬다.</li>
-            <li>시공간을 초월하여 한 분이시면서도 세 분이며, 세 분이시면서도 한 분이다.</li>
-            <li>삼위일체의 하나님은 하나의 신이다 (유일신).</li>
-            <li>어떤 격의 하나님을 찾아도 다른 두 격의 하나님이 함께하시고 응답하신다.</li>
-        </ul>
-    </div>
+	<!-- 카드: 복과 축복 -->
+	<div class="card bg-base-100 shadow-xl rounded-lg p-6">
+		<h2 class="text-2xl md:text-3xl font-semibold mb-6 border-b pb-2 text-center">복과 축복</h2>
+		<!-- 복과 축복 -->
+		<section class="mb-8">
+			<h3 class="text-xl md:text-2xl font-semibold mb-2 text-center">복</h3>
+			<p class="mb-4 pl-4 leading-relaxed">
+				복은 하나님이 인간에게 주시는 애프터서비스이다. (새신자반에서 다루었다)<br>
+				복을 사모해야 하나, 복 자체를 목적으로 삼으면 안 되며 이 경우가 기복주의이다.
+				그리스도인이 복을 사모해야 하는 이유는 하나님 복 안에서만 하나님을 목적으로 삼는 사람다운 삶을 살 수 있기 때문이다.
+			</p>
+			<h3 class="text-xl md:text-2xl font-semibold mb-2 text-center">축복</h3>
+			<p class="mb-4 pl-4 leading-relaxed">
+				하나님의 복을 빌어 달라는 뜻으로, 사람과 사람 사이의 관계에서만 사용해야 한다.
+				하나님께 복을 구할 때에는 복을 내려 달라고 기도해야 한다.
+			</p>
+		</section>
+	</div>
 
-    <div class="card shadow-md p-4">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4">성령님에 대한 예수님의 설명</h2>
-        <blockquote class="border-l-4 border-primary pl-4 mb-4 italic">"내가 아버지께 구하겠으니 그가 또 다른 보혜사를 너희에게 주사 영원토록 너희와 함께 있게 하리니" (요 14:16)</blockquote>
-        <p class="mb-4">예수님께서는 성령님을 ‘보혜사(保惠師)’라고 부르셨다. 헬라어로 ‘파라클레토스’는 위로자, 돕는 자라는 뜻이다. (영문에서는 위로자, 상담자, 돕는 자 등으로 표현)</p>
-        <p class="mb-4">성령 하나님은 하나의 인격체이다. 성령님은 ‘진리의 영’으로 진리를 말씀하시고, 진리를 통해 나타나신다. 성령님과 깊이 사귀는 사람은 진리 안에 거하며, 그의 삶을 통해 진리가 드러난다. 삶을 통해 진리가 배어나는 사람이 성령 충만한 사람이다.</p>
-    </div>
+	<!-- 카드: 복의 문자적 의미 -->
+	<div class="card bg-base-100 shadow-xl rounded-lg p-6">
+		<h2 class="text-2xl md:text-3xl font-semibold mb-6 border-b pb-2 text-center">복의 문자적 의미</h2>
+		<!-- 창대함 · 번영 -->
+		<section class="mb-8">
+			<h3 class="text-xl md:text-2xl font-semibold mb-2 text-center">창대함 · 번영</h3>
+			<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+				"내가 너로 큰 민족을 이루고 네게 복을 주어 네 이름을 창대하게 하리니 너는 복이 될지라" (창 12:2)
+			</blockquote>
+			<p class="mb-4 pl-4 leading-relaxed">
+				역사 속에서 창대한 민족, 국가가 있었으나 창대함은 결과이며, 창대함 그 자체가 복의 본질이나 목적이 아니다.
+				그리스도인이 복을 창대함이나 번영으로만 간주하는 그릇된 인식을 고쳐야 하며, 만약 창대함 자체를 목적으로 삼는다면 하나님과의 신앙을 잃었거나 잃어가는 중일 것이다.
+			</p>
+		</section>
+		<!-- 행복 -->
+		<section class="mb-8">
+			<h3 class="text-xl md:text-2xl font-semibold mb-2 text-center">행복</h3>
+			<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+				"내가 오늘 네 행복을 위하여 네게 명하는 여호와의 명령과 규례를 지킬 것이 아니냐" (신 10:13)
+			</blockquote>
+			<p class="mb-4 pl-4 leading-relaxed">
+				행복으로 번역된 히브리어 토브 [ טוב ]는 복이라는 뜻이다.
+				하나님께서 주시는 복은 자신의 상황이 어떠하든 더불어 사는 사람들과 관계 속에서 행복을 누리는 것이다.
+			</p>
+			<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+				"마른 떡 한 조각만 있고도 화목하는 것이 제육이 집에 가득하고도 다투는 것보다 나으니라" (잠 17:1)
+			</blockquote>
+			<p class="mb-4 pl-4 leading-relaxed">
+				제육에 해당하는 히브리어 제바흐 [ זיבאך ]는 제사의 제물을 뜻하며, 가장 좋은 것의 상징이다.
+				금은보화가 쌓여 있어도 가족이 서로 다투는 것보다 마른 빵 한 조각으로 온 가족이 행복한 것이 하나님께서 주신 복이다.
+			</p>
+		</section>
+		<!-- 선함 · 아름다움 -->
+		<section class="mb-8">
+			<h3 class="text-xl md:text-2xl font-semibold mb-2 text-center">선함 · 아름다움</h3>
+			<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+				"여호와께서 이르시되 내가 내 모든 선한 것을 네 앞에 지나가게 하고 여호와의 이름을 네 앞에 선포하리라 나는 은혜 베풀 자에게 은혜를 베풀고 긍휼히 여길 자에게 긍휼을 베푸느니라" (출 33:19)
+			</blockquote>
+			<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+				"에브라임은 마치 길들인 암소 같아서 곡식 밟기를 좋아하나 내가 그의 아름다운 목에 멍에를 메우고 에브라임 위에 사람을 태우리니 유다가 밭을 갈고 야곱이 흙덩이를 깨뜨리리라" (호 10:11)
+			</blockquote>
+			<p class="mb-4 pl-4 leading-relaxed">
+				히브리어 투브 [ טוב ]는 복을 뜻하며, 각각 선함과 아름다움으로 번역되었다.
+				하나님의 자녀는 외모와는 상관없이 선하고 아름다운 마음을 지니며, 그 삶으로 드러난다.
+				스스로 주변 사람들의 선하고 아름다운 생각과 마음을 살피며, 하나님께서 주시는 복으로 변화되어 가는지 확인해야 한다.
+				또한, 자신의 삶이 주변 사람들에게 긍정적 영향을 주고 있는지를 살펴보아야 한다. 이는 성령님의 역사하심으로 나타난다.
+			</p>
+		</section>
+		<!-- 바른길 (正道) -->
+		<section class="mb-8">
+			<h3 class="text-xl md:text-2xl font-semibold mb-2 text-center">바른길 (正道)</h3>
+			<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+				"내 아들아 너는 듣고 지혜를 얻어 네 마음을 바른 길로 인도할지니라" (잠 23:19)
+			</blockquote>
+			<p class="mb-4 pl-4 leading-relaxed">
+				히브리어 데레크 [ דרק ]도 복과 관련된 단어로, 복은 모든 일에서 정도를 걷는 것이다.
+				만약 스스로 정도를 걷지 않았음에도 창대함과 번영이 주어졌다면, 그것은 하나님께서 주신 복이 아니다.
+				불의하게 얻은 창대함과 번영은 반드시 하나님 앞에서 심판의 대상이 된다.
+				하나님께 복을 받은 사람은 정도를 걷고도 열매를 맺는다.
+			</p>
+		</section>
+		<!-- 하나님 앞에 무릎 꿇다 · 가까이 나아가다 -->
+		<section>
+			<h3 class="text-xl md:text-2xl font-semibold mb-2 text-center">하나님 앞에 무릎 꿇다 · 하나님께 가까이 나아가다</h3>
+			<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+				"솔로몬이 일찍이 놋으로 대를 만들었으니 길이가 다섯 규빗이요 너비가 다섯 규빗이요 높이가 세 규빗이라 뜰 가운데에 두었더니 그가 그 위에 서서 이스라엘의 모든 회중 앞에서 무릎을 꿇고 하늘을 향하여
+				손을 펴고" (대하 6:13)
+			</blockquote>
+			<p class="mb-4 pl-4 leading-relaxed">
+				히브리어 바라크/복은 매 순간 하나님 앞에 무릎을 꿇고, 하나님께 가까이 나아가는 것을 의미한다.
+				하나님의 복을 받은 사람은 시간이 갈수록 하나님과 더 가까워지며, 나이가 들수록 하나님께 무릎 꿇는다.
+			</p>
+			<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+				"내가 두 가지 일을 주께 구하였사오니 내가 죽기 전에 내게 거절하지 마시옵소서"<br>
+				"곧 헛된 것과 거짓말을 내게서 멀리 하옵시며 나를 가난하게도 마옵시고 부하게도 마옵시고 오직 필요한 양식으로 나를 먹이시옵소서"<br>
+				"혹 내가 배불러서 하나님을 모른다 여호와가 누구냐 할까 하오며 혹 내가 가난하여 도둑질하고 내 하나님의 이름을 욕되게 할까 두려워함이니이다" (잠 3:7-9)
+			</blockquote>
+			<p class="mb-4 pl-4 leading-relaxed">
+				아굴의 기도는 우리가 어떤 기도를 드려야 하는지, 진실하게 살며 필요한 것만으로 자족하게 해달라는 간절한 기도를 상기시켜준다.
+			</p>
+			<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+				"세월을 아끼라 때가 악하니라" (엡 5:16)
+			</blockquote>
+			<p class="mb-4 pl-4 leading-relaxed">
+				'세월을 아끼라'는 헬라어 엑사고라조 [ ἐξαγοράζω ] 는 '건져 올리다'라는 의미이다.
+				업적이나 물질적인 것을 이루었다 하더라도, 평생 욕망을 좇아 진리로 건져 올린 시간이 없으면 헛되다.
+				세상을 떠날 때는 물질적인 것은 모두 두고 가야 하고 오직 진리로 건져 올린 시간, 즉 하나님의 자녀답게 산 삶만이 남는다.
+			</p>
+			<h4 class="text-xl md:text-2xl font-semibold mb-2 text-center">
+				정도를 걷고, 하나님 앞에 무릎을 꿇으며, 진리를 좇아 선하고 아름답게 하나님께 나아가는 사람이 복되다.
+			</h4>
+		</section>
+	</div>
 
-    <div class="card shadow-md p-4">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4">성령님의 사역</h2>
-        <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>우리에게 주님의 말씀을 가르쳐주시고 생각나게 하신다.</li>
-            <li>우리의 잘못된 부분을 꾸짖어 양심을 갖도록 책망하신다.</li>
-            <li>우리를 진리 가운데로 인도하신다.</li>
-        </ul>
-    </div>
+	<!-- 카드: 아브라함에게 임한 복 -->
+	<div class="card bg-base-100 shadow-xl rounded-lg p-6">
+		<h2 class="text-2xl md:text-3xl font-semibold mb-6 border-b pb-2 text-center">아브라함에게 임한 복</h2>
+		<p class="mb-4 pl-4 leading-relaxed">
+			믿음의 조상이자 복의 근원으로 불리는 아브라함에게 주어진 복.
+		</p>
+		<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+			"여호와께서 아브람에게 이르시되 너는 너의 고향과 친척과 아버지의 집을 떠나 내가 네게 보여 줄 땅으로 가라" <br>
+			"내가 너로 큰 민족을 이루고 네게 복을 주어 네 이름을 창대하게 하리니 너는 복이 될지라" <br>
+			"너를 축복하는 자에게는 내가 복을 내리고 너를 저주하는 자에게는 내가 저주하는 자에게는 내가 저주하리니 땅의 모든 족속이 너로 말미암아 복을 얻을 것이라 하신지라" (창 12:1-4)
+		</blockquote>
+		<p class="mb-4 pl-4 leading-relaxed">
+			아브라함이 받은 첫 번째 복은 하나님의 말씀을 듣는 복이었다.
+			그에게 하나님의 말씀이 들렸고, 아브라함은 여호와의 말씀에 순종하여 나아갔다.
+			그와 함께 갔던 조카 롯은 여호와가 아닌 삼촌인 아브라함, 곧 인간을 따라갔고 결국 소돔과 고모라에서 패망하고 말았다.
+			아브라함은 하나님의 말씀을 삶으로 듣는 복된 귀를 지녔다. 복된 귀를 지녔다는 것은 하나님의 말씀을 삶으로 듣는 것이다.
+		</p>
+		<div id="imageContainer" class="overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+			<img src="./pic1.png" alt="성 마태오를 부르심 - 카라바조 작" class="w-full mb-4">
+		</div>
+		<button id="toggleImageBtn" class="btn btn-primary mb-4" onclick="toggleImage()">본문 참조 - <성 마태오를 부르심 : 카라바조></button>
+		<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+			"여호와께서 아브람에게 나타나 이르시되 내가 이 땅을 네 자손에게 주리라 하신지라 자기에게 나타나신 여호와께 그가 그 곳에서 제단을 쌓고" <br>
+			"거기서 벧엘 동쪽 산으로 옮겨 장막을 치니 서쪽은 벧엘이요 동쪽은 아이라 그가 그 곳에서 여호와께 제단을 쌓고 여호와의 이름을 부르더니" (창 12:7-8)
+		</blockquote>
+		<p class="mb-4 pl-4 leading-relaxed">
+			아브라함은 가는 곳마다 여호와 하나님께 제단을 쌓으며 예배드렸다.
+			이는 오늘날 하나님께 예배드리는 행위, 즉 하나님 앞에 무릎 꿇고 경배하는 행위로 해석할 수 있다.
+			복의 문자적 의미 중 '하나님 앞에 무릎 꿇다'가 이를 잘 나타내며, 아브라함은 그러한 복을 입은 사람이었다.
+		</p>
+		<h4 class="text-xl md:text-2xl font-semibold mb-2 text-center">하나님께서는 아브라함에게 큰 민족을 이루고 이름을 창대하게 해주리라 약속하셨지만, 그의 생에는 이루지 못하였다. 그가 살아 생전에 누린 복은 모두 영적인 복이었다. 그리고 그
+			결과로 그는 창대한 믿음의 조상이 되었다. <br>전 세계 모든 그리스도인들의 믿음의 조상이 된 것이 증거이며, 아브라함은 복의 근원이다.
+		</h4>
+	</div>
 
-    <div class="card shadow-md p-4">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4">성령님의 역사</h2>
-        <p class="mb-4">성령님과 동행하는 사람에게 일어나는 역사:
-            <button class="btn btn-xs sm:btn-sm btn-outline ml-2" onclick="toggleVerse('holy-spirit-works')">말씀 보기</button>
-        </p>
-        <ul class="list-disc list-inside mb-4 space-y-2">
-            <li><strong>감동</strong> (삼상 16:13): 마음을 감동시켜 움직이게 하시고, 다른 사람의 마음도 감동시키신다.</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-works fade fade-hidden">
-                "사무엘이 기름 뿔병을 가져다가 그의 형제 중에서 그에게 부었더니 이 날 이후로 다윗이 여호와의 영에게 크게 감동되니라 사무엘이 떠나서 라마로 가니라" (삼상 16:13)
-            </blockquote>
-            <li><strong>말씀</strong> (마 10:19-20, 행 4:13): 필요한 말씀을 주시고 답을 주신다.</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-works fade fade-hidden">
-                "네 부모를 공경하라, 네 이웃을 네 자신과 같이 사랑하라 하신 것이니라, 그 청년이 이르되 이 모든 것을 내가 지키었사온대 아직도 무엇이 부족하니이까" (마 10:19-20)
-            </blockquote>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-works fade fade-hidden">
-                "그들이 베드로와 요한이 담대하게 말함을 보고 그들을 본래 학문 없는 범인으로 알았다가 이상히 여기며 또 전에 예수와 함께 있던 줄도 알고" (행 4:13)
-            </blockquote>
-            <li><strong>위로</strong> (행 9:31): 문제를 해결하는 성령님의 위로를 주신다.</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-works fade fade-hidden">
-                "그리하여 온 유대와 갈릴리와 사마리아 교회가 평안하여 든든히 서 가고 주를 경외함과 성령의 위로로 진행하여 수가 더 많아지니라" (행 9:31)
-            </blockquote>
-            <li><strong>사랑</strong> (롬 5:5): 하나님의 사랑을 알게 하시고, 다른 사람을 진정으로 사랑하게 하신다.</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-works fade fade-hidden">
-                "소망이 우리를 부끄럽게 하지 아니함은 우리에게 주신 성령으로 말미암아 하나님의 사랑이 우리 마음에 부은 바 됨이니" (롬 5:5)
-            </blockquote>
-            <li><strong>소망</strong> (롬 15:13): 하나님의 말씀을 통해 심령을 채워 소망이 넘치게 하신다.</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-works fade fade-hidden">
-                "소망의 하나님이 모든 기쁨과 평강을 믿음 안에서 너희에게 충만하게 하사 성령의 능력으로 소망이 넘치게 하시기를 원하노라" (롬 15:13)
-            </blockquote>
-            <li><strong>거룩</strong> (롬 15:16): 우리의 잘못을 알게 하시고 거룩하고 구별된 삶을 살도록 하신다.</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-works fade fade-hidden">
-                "이 은혜는 곧 나로 이방인을 위하여 그리스도 예수의 일꾼이 되어 하나님의 복음의 제사장 직분을 하게 하사 이방인을 제물로 드리는 것이 성령 안에서 거룩하게 되어 받으실 만하게 하려 하심이라" (롬 15:16)
-            </blockquote>
-            <li><strong>자유</strong> (고후 3:17): 성령님의 역사임을 알기에 자유함을 얻고, 죄의 유혹으로부터도 자유롭게 하신다.</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-works fade fade-hidden">
-                "주는 영이시니 주의 영이 계신 곳에는 자유가 있느니라" (고후 3:17)
-            </blockquote>
-            <li><strong>치유</strong>: 우리와 함께하는 사람들을 치유하신다.</li>
-            <li><strong>능력</strong> (삿 14:6, 삿 15:14): 행하기 어렵거나 불가능한 상황에서 필요에 따라 능력과 권능을 주신다.</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-works fade fade-hidden">
-                "여호와의 영이 삼손에게 강하게 임하니 그가 손에 아무것도 없이 그 사자를 염소 새끼를 찢는 것 같이 찢었으나 그는 자기가 행한 일을 부모에게 알리지 아니하였더라" (삿 14:6)
-            </blockquote>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-works fade fade-hidden">
-                "삼손이 레히에 이르매 블레셋 사람들이 그에게로 마주 나가며 소리 지를 때 여호와의 영이 삼손에게 갑자기 임하시매 그의 팔 위의 밧줄이 불탄 삼과 같이 그의 결박되었던 손에서 떨어진지라" (삿 15:14)
-            </blockquote>
-            <li><strong>열매</strong> (갈 5:22-23): 사랑, 희락, 화평, 오래 참음, 자비, 양선, 충성, 온유, 절제 등의 성령의 열매를 맺게 하신다.</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-works fade fade-hidden">
-                "오직 성령의 열매는 사랑과 희락과 화평과 오래 참음과 자비와 양선과 충성과, 온유와 절제니 이같은 것을 금지할 법이 없느니라" (갈 5:22-23)
-            </blockquote>
-        </ul>
-    </div>
+	<!-- 카드: 예수님께서 말씀하신 '복 있는 사람' -->
+	<div class="card bg-base-100 shadow-xl rounded-lg p-6">
+		<h2 class="text-2xl md:text-3xl font-semibold mb-6 border-b pb-2 text-center">예수님께서 말씀하신 '복 있는 사람'
+			<button class="btn btn-xs sm:btn-sm btn-outline ml-2" onclick="toggleVerse('beatitudes')">말씀 보기</button>
+		</h2>
+		<blockquote class="border-l-4 border-primary pl-4 mb-4 italic beatitudes fade fade-hidden">
+			"예수께서 무리를 보시고 산에 올라가 앉으시니 제자들이 나아온지라" <br>
+			"입을 열어 가르쳐 이르시되" <br>
+			"심령이 가난한 자는 복이 있나니 천국이 그들의 것임이요" <br>
+			"애통하는 자는 복이 있나니 그들이 위로를 받을 것임이요" <br>
+			"온유한 자는 복이 있나니 그들이 땅을 기업으로 받을 것임이요" <br>
+			"의에 주리고 목마른 자는 복이 있나니 그들이 배부를 것임이요" <br>
+			"긍휼히 여기는 자는 복이 있나니 그들이 긍휼히 여김을 받을 것임이요" <br>
+			"마음이 청결한 자는 복이 있나니 그들이 하나님을 볼 것임이요" <br>
+			"화평하게 하는 자는 복이 있나니 그들이 하나님의 아들이라 일컬음을 받을 것임이요" <br>
+			"의를 위하여 박해를 받은 자는 복이 있나니 천국이 그들의 것임이라" (마 5:1-10)
+		</blockquote>
+		<p class="mb-4 pl-4 leading-relaxed">
+			예수님의 체계적인 설교인 산상수훈의 첫 부분은 팔복에 대한 설교이다.
+			첫 주제는 복이었으며, 복이 중요한 것과 동시에, 당시 사람들의 복에 대한 그릇된 인식을 바로잡기 위해 주제로 삼으셨다.
+		</p>
+		<ul class="list-disc list-inside space-y-4">
+			<li>
+				<strong>심령이 가난한 자 : <span class="italic">천국이 그들의 것임</span> </strong>
+				<p class="mb-4 pl-4 leading-relaxed">
+					헬라어 원문의 문장을 살려 번역하면 "복된 사람은 심령이 가난한 사람이며, 그 이유는 천국이 그들의 것이기 때문이다."
+					가난한 심령은 자신의 능력이나 소유를 의지하지 않는 마음을 뜻한다.
+					누가복음에는 '심령'이라는 단어가 생략되어 있다.
+				</p>
+				<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+					"예수께서 눈을 들어 제자들을 보시고 이르시되 너희 가난한 자는 복이 있나니 하나님의 나라가 너희 것임이요" (눅 6:20)
+				</blockquote>
+				<p class="mb-4 pl-4 leading-relaxed">
+					그 이유는 두 복음서가 대상으로 하는 독자가 다르기 때문입니다.
+					마태복음은 물질적으로 가난한 유대인을, 누가복음은 이미 많은 것을 소유한 자와 대비하여 오직 하나님만을 믿을 수 있는 가난한 자를 언급한다.
+					'심령이 가난한 자'는 자기에게 절망한 사람으로, 빈부를 떠나 자신을 신봉하지 않는 사람이다.
+					이런 사람만이 하나님을 온전히 신뢰할 수 있는 복된 사람이다.
+				</p>
+			</li>
+			<li>
+				<strong>애통하는 자 : <span class="italic">위로를 받을 것임</span> </strong>
+				<p class="mb-4 pl-4 leading-relaxed">
+					애통은 가슴이 찢어질 정도로 비통하게 우는 것을 의미한다.
+					예수님은 나사로의 죽음 앞(요한복음 11:35), 예루살렘을 보실 때(눅 19:41-44), 겟세마네 동산에서(히브리서 5:7, 마태 26:36-46) 세 번 애통하셨다.
+					예수님이 애통하실 때 하나님께서는 예수님의 심령을 위로로 채워주셨다.
+					애통은 하나님의 위로를 담는 은총의 그릇이다.
+				</p>
+			</li>
+			<li>
+				<strong>온유한 자 : <span class="italic">땅을 기업으로 받을 것임</span> </strong>
+				<p class="mb-4 pl-4 leading-relaxed">
+					'온유'에 해당하는 헬라어 프라우테스 [ πραΰτης ] 는 야생동물의 품성을 일컫는 단어다.
+					야생동물은 거칠다. 조련된 야생동물은 거친 품성은 그대로 가지고 있지만 자신이 아니라 주인을 위해 사용한다.
+					온유는 우유부단함이 아니라 주인을 위해 부드럽지만 때로는 폭풍처럼 거친 성품을 의미한다.
+					예수님은 부드러우시면서도, 성전에서 장사꾼들을 내쫓으실 때에는 폭풍과 같이 단호하셨다.
+					성경에서 직접적으로 온유하다고 표현한 인물은 예수님과 모세이다.
+					예수님과 모세 모두 실제 물리적인 땅을 받지는 못했다.
+					이는 땅으로 번역된 헬라어 게 [ γῆ ] 는 '나라' 혹은 '세상' 뜻하기도 하다.
+					온유한 사람에게 이 세상을 얻을 권리를 상속해 주신다.
+					주님안에서 온유한 사람으로 살면 생전에 물질적인 땅을 얻지 못해도, 생후에 오히려 세상을 얻을 것이다.
+				</p>
+			</li>
+			<li>
+				<strong>의에 주리고 목마른 자 : <span class="italic">배부를 것임</span> </strong>
+				<p class="mb-4 pl-4 leading-relaxed">
+					진정으로 살아있음을 느끼는 증거는 배고픔과 갈증을 느끼는 것에 있다.
+					의에 주리고 목마른 자는 영적으로 살아있음을 증명하며, 그들에 의해 하나님의 나라가 이 땅에 이루어진다.
+					'의'는 하나님과의 바른 관계를 의미하며, 하나님의 말씀을 사랑하는 삶을 뜻한다.
+					육체의 배부름이 아니라 영혼의 흡족함을 통해 진정한 행복을 누리는 것이 복있는 자다.
+				</p>
+			</li>
+			<li>
+				<strong>긍휼히 여기는 자 : <span class="italic">긍휼히 여김을 받을 것임</span> </strong>
+				<p class="mb-4 pl-4 leading-relaxed">
+					'긍휼히 여기다'는 단순한 감정이 아니라 헬라어 동사 엘레에오 [ ἐλεέω ] 에서 알 수 있듯 구체적인 행동을 의미한다.
+					지속적인 긍휼은 하나님 안에서 누리는 부요함 덕분에 가능하며,
+					하나님께서 먼저 긍휼을 베푸셨기에 우리도 그 긍휼을 행할 수 있다.
+					긍휼을 베푸는 사람이 긍휼을 받는다는 예수님의 말씀처럼, 긍휼을 베푸는 사람이 복이 있다.
+				</p>
+			</li>
+			<li>
+				<strong>마음이 청결한 자 : <span class="italic">하나님을 볼 것임</span> </strong>
+				<p class="mb-4 pl-4 leading-relaxed">
+					마음의 청결은 하나님의 청결하심이 자신의 마음을 통해 드러나게 하는 사람이다.
+					자신의 영혼의 초점을 하니님께 맞추면, 하나님의 거룩하심과 순결하심이 자신의 마음과 삶을 통해 드러나게 된다.
+				</p>
+			</li>
+			<li>
+				<strong>화평하게 하는 자 : <span class="italic">하나님의 아들이라 일컬음을 받을 것임</span> </strong>
+				<p class="mb-4 pl-4 leading-relaxed">
+					화평을 뜻하는 헬라어 에이레네 [ εἰρήνη ]는 '평화', '평안'을 의미하기도 한다.
+					예수님은 화평하게 하는 사람, 즉 평화를 실행하는 사람이 복이 있다고 말씀하셨다.
+					누군가와 화평을 이루기 위해 자기를 비우고 버리는 사람은 복된 사람이다.
+					그런 사람이 '하나님의 자녀라 일컬음을 받을 것' 이기 때문이다.
+				</p>
+			</li>
+			<li>
+				<strong>의를 위하여 박해를 받은 자 : <span class="italic">천국이 그들의 것임</span> </strong>
+				<p class="mb-4 pl-4 leading-relaxed">
+					헬라어로 해석하면, 과거나 현재에 관계없이 의를 위해 계속 박해받는 사람이 복되다는 뜻이다.
+					현대에도 하나님의 의를 좇아 바른 신앙양심으로 살려하면 어떤 형태로든 불이익을 당하게 된다. 이것을 감내하는 사람은 복이 있다.
+					'천국이 그들의 것' 이기 때문이다.
+				</p>
+			</li>
+		</ul>
+	</div>
 
-    <div class="card shadow-md p-4">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4">성령님을 받을 수 있는 방법</h2>
-        <p class="mb-4">성경에서 나타난 성령님을 받는 방법:
-            <button class="btn btn-xs sm:btn-sm btn-outline ml-2" onclick="toggleVerse('holy-spirit-given')">말씀 보기</button>
-        </p>
-        <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>합심하여 기도하여 성령의 충만함을 받음 (행 2:1-4)</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-given fade fade-hidden">
-                "오순절 날이 이미 이르매 그들이 다같이 한 곳에 모였더니, 홀연히 하늘로부터 급하고 강한 바람 같은 소리가 있어 그들이 앉은 온 집에 가득하며, 마치 불의 혀처럼 갈라지는 것들이 그들에게 보여 각 사람 위에 하나씩 임하여 있더니, 그들이 다 성령의 충만함을 받고 성령이 말하게 하심을 따라 다른 언어들로 말하기를 시작하니라" (행 2:1-4)
-            </blockquote>
-            <li>회개하고 예수 그리스도의 이름으로 세례를 받음 (행 2:38-39)</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-given fade fade-hidden">
-                "베드로가 이르되 너희가 회개하여 각각 예수 그리스도의 이름으로 세례를 받고 죄 사함을 받으라 그리하면 성령의 선물을 받으리니, 이 약속은 너희와 너희 자녀와 모든 먼 데 사람 곧 주 우리 하나님이 얼마든지 부르시는 자들에게 하신 것이라 하고" (행 2:38-39)
-            </blockquote>
-            <li>예수님을 임금과 구주로 삼고 증언하며 순종함 (행 5:30-32)</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-given fade fade-hidden">
-                "너희가 나무에 달아 죽인 예수를 우리 조상의 하나님이 살리시고, 이스라엘에게 회개함과 죄 사함을 주시려고 그를 오른손으로 높이사 임금과 구주로 삼으셨느니라, 우리는 이 일에 증인이요 하나님이 자기에게 순종하는 사람들에게 주신 성령도 그러하니라 하더라" (행 5:30-32)
-            </blockquote>
-            <li>안수를 통해 성령을 받음 (행 8:17)</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-given fade fade-hidden">
-                "이에 두 사도가 그들에게 안수하매 성령을 받는지라" (행 8:17)
-            </blockquote>
-            <li>말씀을 들음 (행 10:44)</li>
-            <blockquote class="border-l-4 border-primary pl-8 mb-4 italic holy-spirit-given fade fade-hidden">
-                "베드로가 이 말을 할 때에 성령이 말씀 듣는 모든 사람에게 내려오시니" (행 10:44)
-            </blockquote>
-        </ul>
-        <p class="mb-4">위의 방법과는 별개로, 이미 성령님께서 임하셨다. 예수님에 대한 관심 때문에 이 글을 읽고 있다는 것 자체가 그 증거이다.</p>
-        <blockquote class="border-l-4 border-primary pl-4 mb-4 italic">"그러므로 내가 너희에게 알리노니 하나님의 영으로 말하는 자는 누구든지 예수를 저주할 자라 하지 아니하고 또 성령으로 아니하고는 누구든지 예수를 주시라 할 수 없느니라 (고전 12:3)"</blockquote>
-    </div>
+	<!-- 카드: 결론 -->
+	<div class="card bg-base-100 shadow-xl rounded-lg p-6">
+		<h2 class="text-2xl md:text-3xl font-semibold mb-6 border-b pb-2 text-center">결론</h2>
+		<ul class="list-decimal list-inside mb-4 space-y-2">
+			<li><strong>예수님께서 셜교하신 여덟 가지 복은 모두 하나님과의 관계에 대한 복이다.</strong></li>
+			<p class="mb-4">
+				물질적이거나 이 세상의 것을 목표로 하는 것이 아닌, 영원한 천국의 삶을 목적으로 삼아야 한다.
+			</p>
+			<li><strong>그러므로 하나님의 말씀을 좇고 하나님께 가까이 나아가는 사람이 복된 사람이다.</strong></li>
+			<blockquote class="border-l-4 border-primary pl-4 mb-4 italic">
+				"예수께서 이르시되 오히려 하나님의 말씀을 듣고 지키는 자가 복이 있느니라 하시니라" (눅 11:28)
+			</blockquote>
+			<li><strong>하나님께 가까이 나아가지 않을 수 없도록 하나님께서 내게 주신 가시가 복이다.</strong></li>
+			<p class="mb-4">
+				사도 바울은 육체의 가시를 가지고 살았는데, 이것을 그가 가진 지병을 뜻한다.
+				주님께 그 가시를 제거해 주시기를 세 번이나 간절히 기도드렸지만 끝내 응답 받지 못하였다.
+				그러나 그 가시 덕분에 바울은 필평생 육체의 연약함 속에서도 자기 교만에 빠지지 않고, 언제나 하나님만 의지하면서 하나님께 더욱 가까이 나아갈 수 있었다.
+				이 가시야말로 바울을 영원한 사도로 세워 준 하나님의 복이었다.
+			</p>
+		</ul>
+	</div>
 
-    <div class="card shadow-md p-4">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4">성령 충만한 삶을 살기 위해</h2>
-        <p class="mb-4">하나님께서는 이미 성령님을 보내주셨다. 중요한 것은, 우리 안에 거하시는 성령님을 날마다 의식하며 그분의 음성에 귀 기울이고, 그분의 인도하심을 따라 성령 충만한 삶을 살아가는 것이다.</p>
-        <p>성령 충만한 삶을 살겠다고 결심하는 그날이 성령 세례를 받은 날이다. 성령 세례는 한 번 받지만, 성령 충만은 매일 이루어져야 한다. 성령님께서 함께하심을 믿고 성령 충만하게 살 것인지, 불신하여 원망과 불평의 삶을 살 것인지는 나의 자유이며 그 결과의 책임도 나의 몫이다.</p>
-    </div>
-    <button id="scroll-to-top"
-            class="fixed top-1/2 right-4 md:right-8 lg:right-16 transform -translate-y-1/2 z-50 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300"
-            onclick="scrollToTop()"
-            aria-label="맨 위로 이동">
-        <!-- 위쪽 화살표 아이콘 (SVG) -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-        </svg>
-    </button>
+	<!-- 맨 위로 이동 버튼 -->
+	<button id="scroll-to-top"
+					class="fixed top-1/2 right-4 md:right-8 lg:right-16 transform -translate-y-[100%] z-50 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300"
+					onclick="scrollToTop()" aria-label="맨 위로 이동">
+		<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+		</svg>
+	</button>
+
+	<!-- 맨 아래 이동 버튼 -->
+	<button id="scroll-to-bottom"
+					class="fixed top-1/2 right-4 md:right-8 lg:right-16 transform translate-y-[100%] z-50 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300"
+					onclick="scrollToBottom()" aria-label="맨 아래로 이동">
+		<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+			<!-- 현재는 맨 위로 이동과 동일한 svg 코드 사용; 필요에 따라 아이콘 교체 가능 -->
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+		</svg>
+	</button>
 </div>
+
 <script>
-    // 다크 모드 및 라이트 모드 전환 스크립트
-    function toggleTheme() {
-        const html = document.documentElement;
-        if (html.dataset.theme === "bumblebee") {
-            html.dataset.theme = "night";
-        } else {
-            html.dataset.theme = "bumblebee";
-        }
-    }
+	// 다크 모드 및 라이트 모드 전환 스크립트
+	function toggleTheme() {
+		const html = document.documentElement;
+		html.dataset.theme = (html.dataset.theme === 'bumblebee') ? 'night' : 'bumblebee';
+	}
 
-    function toggleVerse(className) {
-        const elements = document.getElementsByClassName(className);
-        const button = event.currentTarget;
-        const isHidden = elements[0].classList.contains('fade-hidden');
+	function toggleVerse(className) {
+		const elements = document.getElementsByClassName(className);
+		const button = event.currentTarget;
+		const isHidden = elements[0].classList.contains('fade-hidden');
+		button.setAttribute('aria-expanded', !isHidden);
+		for (const element of elements) {
+			element.classList.toggle('fade-hidden');
+			element.classList.toggle('mb-4');
+		}
+	}
 
-        // 버튼의 aria-expanded 속성 업데이트
-        button.setAttribute('aria-expanded', !isHidden);
+	function toggleImage() {
+		const container = document.getElementById("imageContainer");
+		const btn = document.getElementById("toggleImageBtn");
 
-        for (const element of elements) {
-            element.classList.toggle('fade-hidden');
-            element.classList.toggle('mb-4'); // mb-4 토글
-        }
-    }
+		if (container.classList.contains("opacity-0")) {
+			// 이미지 보이기: 컨테이너의 scrollHeight 값을 읽어 max-height로 지정
+			container.style.maxHeight = container.scrollHeight + "px";
+			container.classList.remove("opacity-0");
+			container.classList.add("opacity-100");
+			btn.textContent = "숨김";
+		} else {
+			// 이미지 숨기기:
+			// 우선 현재 높이를 max-height로 고정하고(전환 준비)
+			container.style.maxHeight = container.scrollHeight + "px";
+			// 강제로 reflow 시켜줌
+			container.offsetHeight;
+			// opacity와 max-height를 0으로 전환
+			container.classList.remove("opacity-100");
+			container.classList.add("opacity-0");
+			container.style.maxHeight = "0";
+			btn.textContent = "본문 참조 - <성 마태오를 부르심 : 카라바조>";
+		}
+	}
 
-    let hideButtonTimer = null; // 타이머를 추적하기 위한 변수
+	let hideTopTimer = null;
+	let hideBottomTimer = null;
 
-    // "맨 위로 이동" 버튼 표시 여부를 결정하는 함수
-    window.addEventListener('scroll', function() {
-        const scrollToTopBtn = document.getElementById('scroll-to-top');
-        const scrollPosition = window.scrollY || window.pageYOffset;
-        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	window.addEventListener('scroll', function() {
+		const scrollToTopBtn = document.getElementById('scroll-to-top');
+		const scrollToBottomBtn = document.getElementById('scroll-to-bottom');
 
-        if (scrollPosition > windowHeight / 2) {
-            // 버튼을 표시
-            scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-            scrollToTopBtn.classList.add('opacity-50');
+		const scrollPosition = window.scrollY || window.pageYOffset;
+		const doc = document.documentElement;
+		const maxScroll = doc.scrollHeight - doc.clientHeight;
 
-            // 기존 타이머가 있으면 취소
-            if (hideButtonTimer) {
-                clearTimeout(hideButtonTimer);
-            }
+		// --- 맨 위로 이동 버튼: 전체 스크롤 영역의 30%를 넘으면 표시 ---
+		const topThreshold = maxScroll * 0.30;
+		if (scrollPosition > topThreshold) {
+			scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+			scrollToTopBtn.classList.add('opacity-50');
+			if (hideTopTimer) clearTimeout(hideTopTimer);
+			hideTopTimer = setTimeout(() => {
+				scrollToTopBtn.classList.remove('opacity-50');
+				scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+			}, 1500);
+		} else {
+			scrollToTopBtn.classList.remove('opacity-50');
+			scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+			if (hideTopTimer) {
+				clearTimeout(hideTopTimer);
+				hideTopTimer = null;
+			}
+		}
 
-            // 1.5초 후에 버튼을 숨김
-            hideButtonTimer = setTimeout(() => {
-                scrollToTopBtn.classList.remove('opacity-50');
-                scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
-            }, 1500);
-        } else {
-            // 버튼을 숨김
-            scrollToTopBtn.classList.remove('opacity-50');
-            scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+		// --- 맨 아래로 이동 버튼: 사용자가 하단에 있지 않으면 표시 ---
+		// 하단에 가까운지 판별 (50px 이내면 "하단에 있다"로 간주)
+		const bottomTolerance = 50; // px 단위
+		if (scrollPosition + window.innerHeight < doc.scrollHeight - bottomTolerance) {
+			scrollToBottomBtn.classList.remove('opacity-0', 'pointer-events-none');
+			scrollToBottomBtn.classList.add('opacity-50');
+			if (hideBottomTimer) clearTimeout(hideBottomTimer);
+			hideBottomTimer = setTimeout(() => {
+				scrollToBottomBtn.classList.remove('opacity-50');
+				scrollToBottomBtn.classList.add('opacity-0', 'pointer-events-none');
+			}, 1500);
+		} else {
+			scrollToBottomBtn.classList.remove('opacity-50');
+			scrollToBottomBtn.classList.add('opacity-0', 'pointer-events-none');
+			if (hideBottomTimer) {
+				clearTimeout(hideBottomTimer);
+				hideBottomTimer = null;
+			}
+		}
+	});
 
-            // 타이머가 있다면 취소
-            if (hideButtonTimer) {
-                clearTimeout(hideButtonTimer);
-                hideButtonTimer = null;
-            }
-        }
-    });
+	function scrollToTop() {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	}
 
-    // 버튼 클릭 시 페이지 맨 위로 부드럽게 스크롤하는 함수
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
+	function scrollToBottom() {
+		window.scrollTo({
+			top: document.documentElement.scrollHeight,
+			behavior: 'smooth'
+		});
+	}
 </script>
 </body>
 </html>
